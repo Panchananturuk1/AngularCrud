@@ -1,18 +1,39 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id": 2,
+      "firstName": "Rocking",
+      "lastName": "Monu",
+      "email": "rocking@gmail.com",
+      "mobile": "909090",
+      "salary": "120,00"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 4,
+      "firstName": "Panchanan",
+      "lastName": "turuk",
+      "email": "pturuk123@gmail.com",
+      "mobile": "8596957901",
+      "salary": "45,000"
+    },
+    {
+      "id": 5,
+      "firstName": "suman",
+      "lastName": "singh",
+      "email": "suman@gmail.com",
+      "mobile": "123",
+      "salary": "123"
+    },
+    {
+      "id": 6,
+      "firstName": "Dilip",
+      "lastName": "Suna",
+      "email": "dilip@gmail.com",
+      "mobile": "8018640492",
+      "salary": "10,000"
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }
