@@ -15,6 +15,8 @@ export class EmployeeDashComponent implements OnInit {
   formValue!: FormGroup
   employeeModelObj: EmployeeModal = new EmployeeModal();
   employeeData: any;
+  showAdd!: boolean;
+  showUpdate!: boolean;
   constructor(private formBuilder: FormBuilder, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -31,6 +33,14 @@ export class EmployeeDashComponent implements OnInit {
 
     this.getAllEmployee();
 
+  }
+
+  AddEmployee(){
+
+    this.formValue.reset();
+    this.employeeModelObj.id = 0;
+    this.showAdd = true;
+    this.showUpdate = false;
   }
 
   postEmployeeDetail() {
@@ -55,6 +65,8 @@ export class EmployeeDashComponent implements OnInit {
       })
   }
 
+ 
+
   getAllEmployee() {
     this.api.getEmployee().subscribe(res=>{
       this.employeeData = res;
@@ -72,13 +84,18 @@ export class EmployeeDashComponent implements OnInit {
   }
 
   onEdit(row : any){
+    this.showAdd = false;
+    this.showUpdate = true;
+
     this.employeeModelObj.id = row.id;
+
     console.log(row.id);
     this.formValue.controls['firstName'].setValue(row.firstName);
     this.formValue.controls['lastName'].setValue(row.lastName);
     this.formValue.controls['email'].setValue(row.email);
     this.formValue.controls['mobile'].setValue(row.mobile);
     this.formValue.controls['salary'].setValue(row.salary);
+    // this.formValue.reset();
   }
 
   updateEmployeeDetail(){
@@ -92,7 +109,7 @@ export class EmployeeDashComponent implements OnInit {
     this.api.updateEmployee(this.employeeModelObj, this.employeeModelObj.id)
     .subscribe(res=>{
     
-      alert("Value update succesfully");
+      alert("Value updated succesfully");
       this.formValue.reset();
       let ref = document.getElementById("cancel")
       ref?.click();

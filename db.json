@@ -5,7 +5,7 @@
       "firstName": "Rocking",
       "lastName": "Monu",
       "email": "rocking@gmail.com",
-      "mobile": "909090",
+      "mobile": "801849482",
       "salary": "120,00"
     },
     {
@@ -17,20 +17,12 @@
       "salary": "45,000"
     },
     {
-      "id": 5,
-      "firstName": "suman",
-      "lastName": "singh",
-      "email": "suman@gmail.com",
-      "mobile": "123",
-      "salary": "1234"
-    },
-    {
       "id": 6,
       "firstName": "Dilip",
       "lastName": "Suna",
       "email": "dilip@gmail.com",
       "mobile": "8018640492",
-      "salary": "10,000"
+      "salary": "10,001"
     }
   ],
   "comments": [],
