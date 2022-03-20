@@ -72,11 +72,33 @@ export class EmployeeDashComponent implements OnInit {
   }
 
   onEdit(row : any){
+    this.employeeModelObj.id = row.id;
+    console.log(row.id);
     this.formValue.controls['firstName'].setValue(row.firstName);
     this.formValue.controls['lastName'].setValue(row.lastName);
     this.formValue.controls['email'].setValue(row.email);
     this.formValue.controls['mobile'].setValue(row.mobile);
     this.formValue.controls['salary'].setValue(row.salary);
+  }
+
+  updateEmployeeDetail(){
+  
+    this.employeeModelObj.firstName = this.formValue.value.firstName;
+    this.employeeModelObj.lastName = this.formValue.value.lastName;
+    this.employeeModelObj.email = this.formValue.value.email;
+    this.employeeModelObj.mobile = this.formValue.value.mobile;
+    this.employeeModelObj.salary = this.formValue.value.salary;
+   
+    this.api.updateEmployee(this.employeeModelObj, this.employeeModelObj.id)
+    .subscribe(res=>{
+    
+      alert("Value update succesfully");
+      this.formValue.reset();
+      let ref = document.getElementById("cancel")
+      ref?.click();
+      this.getAllEmployee();
+    })
+
   }
 
 }

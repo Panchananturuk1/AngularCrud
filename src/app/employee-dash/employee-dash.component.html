@@ -32,6 +32,7 @@
       <td>
         <button (click)="onEdit(row)" class="btn btn-info"   data-bs-toggle="modal" data-bs-target="#exampleModal" >Edit</button>
         <button (click)="deleteEmployee(row.id)" class="btn btn-danger mx-3">Delete</button>
+        
       </td>
     </tr>
   </tbody>
@@ -86,6 +87,7 @@
       <div class="modal-footer">
         <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" (click)="postEmployeeDetail()" class="btn btn-primary">ADD</button>
+        <button type="button" (click)="updateEmployeeDetail()" class="btn btn-primary">Update</button>
       </div>
     </div>
   </div>
